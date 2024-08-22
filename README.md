@@ -7,7 +7,7 @@ I forked some visualization functions from [Network Level Analysis (NLA) Toolbox
 All visualization is done in the fsLR 32k mesh of the MNI standard brain. For transition across spaces please try the [neuromaps toolbox](https://github.com/netneurolab/neuromaps).
 
 ## Specific example applications
-[**Example 1**] (https://github.com/cindyhfls/MATLAB_BrainParcelVisualizationFunctions/blob/main/NLA%20visualizationfunctions/Example1_plot_FC_with_silhouette.m)
+[**Example 1**](https://github.com/cindyhfls/MATLAB_BrainParcelVisualizationFunctions/blob/main/NLA%20visualizationfunctions/Example1_plot_FC_with_silhouette.m)
 This concerns the plot of alternative brain system/networks sorting order for existing set of node/region of interests (ROIs) definitions. It calculates and displays the average silhouette index at the bottom to show the cluster quality of the existing system/networks definition provided by the user.
 
 ![image](https://github.com/cindyhfls/Network-Level-Analysis/blob/main/NLA%20visualizationfunctions/Example1.png)
