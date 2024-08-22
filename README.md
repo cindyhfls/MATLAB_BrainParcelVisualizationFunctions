@@ -12,22 +12,22 @@ This concerns the plot of alternative brain system/networks sorting order for ex
 
 ![image](https://github.com/cindyhfls/Network-Level-Analysis/blob/main/NLA%20visualizationfunctions/Example1.png)
 
-**Example 2**
+[**Example 2**](https://github.com/cindyhfls/MATLAB_BrainParcelVisualizationFunctions/blob/main/NLA%20visualizationfunctions/Example2_plot_values_on_parcels.m)
 Taken a given surface parcel assignment in the cortex in the fsLR 32k space. Plot the color assignment with colorbar, the color can indicate parcel homogeneity, variability, correlation strength with behavioral measurement, etc.
 
 ![image](https://github.com/cindyhfls/Network-Level-Analysis/blob/main/NLA%20visualizationfunctions/Example2.png)
 
-**Example 3**
+[**Example 3**](https://github.com/cindyhfls/MATLAB_BrainParcelVisualizationFunctions/blob/main/NLA%20visualizationfunctions/Example3_plot_Network_per_parcel.m)
 Plot the network assignment spatially on the brain. Using a file that stores the colormap and network assignment in the NLA toolbox.
 
 ![image](https://github.com/cindyhfls/Network-Level-Analysis/blob/main/NLA%20visualizationfunctions/Example3.png)
 
-**Example 4**
+[**Example 4**](https://github.com/cindyhfls/MATLAB_BrainParcelVisualizationFunctions/blob/main/NLA%20visualizationfunctions/Example4_get_parcel_files.m)
 Making a parcel file (the assignment of each cortical vertex) from a cifti file with just the cortical vertices. This is needed for Example 2 and 3.
 
 ![image](https://github.com/cindyhfls/Network-Level-Analysis/blob/main/NLA%20visualizationfunctions/Example4.png)
 
-**Example 5**
+[**Example 5**](https://github.com/cindyhfls/MATLAB_BrainParcelVisualizationFunctions/blob/main/NLA%20visualizationfunctions/Example5_plot_continuous_values_on_surfacemesh.m)
 Plot continuous values on the cortex, e.g. Principal gradient (Margulies et al. 2016 PNAS), cortical thickness, Myelin, local connectivity gradient (Gordon et al. 2016 Cerebral Cortex) etc.
 
 ![image](https://github.com/cindyhfls/Network-Level-Analysis/blob/main/NLA%20visualizationfunctions/Example5.png)
