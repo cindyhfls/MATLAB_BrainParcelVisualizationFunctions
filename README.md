@@ -3,10 +3,10 @@
 # Introduction
 I forked some visualization functions from [Network Level Analysis (NLA) Toolbox (Beta version)](https://github.com/mwheelock/Network-Level-Analysis) and adapted them to my use with examples. NLA is an extensible MATLAB-based software package for the analysis of behavioral associations with brain connectivity data. NLA utilizes a statistical approach, variously known as 'pathway analysis,' 'over-representation analysis,' or 'enrichment analysis,' which was first used to describe behavioral or clinical associations in genome-wide association studies.
 
-# Limitation: 
+# Limitation
 All visualizations are done in the fsLR 32k surface (Van Essen et al. 2012 Cerebral Cortex). For transitions across spaces, please try the [neuromaps toolbox](https://github.com/netneurolab/neuromaps).
 
-## Specific example applications
+# Example applications
 [**Example 1**](https://github.com/cindyhfls/MATLAB_BrainParcelVisualizationFunctions/blob/main/NLA%20visualizationfunctions/Example1_plot_FC_with_silhouette.m)
 This example concerns the plot of alternative brain system/network sorting orders for an existing set of node/region of interest (ROI) definitions. It calculates and displays the average silhouette index at the bottom to show the cluster quality of the existing system/network definitions provided by the user.
 
