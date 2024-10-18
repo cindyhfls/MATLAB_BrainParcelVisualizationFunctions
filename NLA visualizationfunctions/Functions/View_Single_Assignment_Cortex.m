@@ -36,12 +36,15 @@ params.Cmap.P=cMap;
 params.TC=1;
 params.ctx='inf';           % 'std','inf','vinf'
 figure;
-ax = subplot(2,1,1);
+t = tiledlayout(2, 1, "TileSpacing", "tight");
+ax = nexttile;
+% ax = subplot(2,1,1);
 params.fig_handle = ax;
 params.view= 'lat';       % 'dorsal','post','lat','med'
 PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
 title(parcelname,'interpreter','none','color','k')
-ax = subplot(2,1,2);
+ax = nexttile;
+% ax = subplot(2,1,2);
 params.fig_handle = ax;
 params.view ='med';
 PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
