@@ -30,12 +30,13 @@ params.Cmap.P=IM.cMap;
 params.TC=1;
 params.ctx='inf';         % also, 'std','inf','vinf'
 
-figure;
-ax = subplot(2,1,1);
+figure; % Replace this with subplot if MATLAB version < 2020b
+tiledlayout(2,1,'TileSpacing','tight')
+ax = nexttile;
 params.fig_handle = ax;
 params.view='lat';        % also, 'post','lat','med'
 PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
-ax = subplot(2,1,2);
+ax = nexttile;
 params.fig_handle = ax;
 params.view='med';        % also, 'post','lat','med'
 PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);

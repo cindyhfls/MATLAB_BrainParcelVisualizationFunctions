@@ -17,14 +17,21 @@ vals = SI(sortid);
 cmap = interp1(linspace(0,100,10),redbluecmap(10),linspace(0,100,100));
 
 colorrange = [-1,1];
-f = figure;
-subplot(2,1,1);
+f=figure; % Replace this with subplot if MATLAB version < 2020b
+tiledlayout(2,1,'TileSpacing','tight')
+ax = nexttile;
 plot_parcels_by_values(vals,Anat,'med',Parcels,colorrange,cmap) 
-subplot(2,1,2);
+ax = nexttile;
 plot_parcels_by_values(vals,Anat,'lat',Parcels,colorrange,cmap) 
 
+% f = figure;
+% subplot(2,1,1);
+% plot_parcels_by_values(vals,Anat,'med',Parcels,colorrange,cmap) 
+% subplot(2,1,2);
+% plot_parcels_by_values(vals,Anat,'lat',Parcels,colorrange,cmap) 
+
 h = axes(f,'visible','off'); % attach colorbar to h
-c = colorbar(h,'Position',[0.9 0.1680 0.022 0.7],'XTick',[0,1],'XTicklabel',colorrange);
+c = colorbar(h,'Position',[0.92 0.1680 0.022 0.7],'XTick',[0,1],'XTicklabel',colorrange);
 colormap(c,cmap);
 
 % print('Example2.png','-dpng')
