@@ -10,7 +10,7 @@ function plot_parcels_by_values(x,Anat,parcelview,Parcels,clim,cmap)
     Anat.CtxR.data=Parcels.CtxR;
     % (2) Set parameters to view as desired
     params.Cmap.P = NaN(length(x),3); % can be NaN too just leave these indices as gaps %I tried applycmap for specific maps but does not seem to work?
-    params.Cmap.P(~isnan(x),:)=value_to_cmap(x(~isnan(x)),clim(1),clim(2),cmap);
+    params.Cmap.P(~isnan(x),:)=value_to_cmap(x(~isnan(x)),clim(1),clim(2),cmap); % I didn't know Adam had the applycmap function which does the same thing
     params.TC= 1;
     params.ctx='inf';           % 'std','inf','vinf'
     params.view= parcelview;       % 'dorsal','post','lat','med'

@@ -122,6 +122,7 @@ if ischar(params.Cmap.P) % Generate positive and negative Cmaps, if present.
     Cmap.P = eval([params.Cmap.P, '(', num2str(params.DR), ');']);
 elseif isnumeric(params.Cmap.P)
     Cmap.P = params.Cmap.P;
+    params.DR = size(Cmap.P,1); % 2024.11.27 JCT: this has to match
 end
 if isfield(params.Cmap, 'flipP')  &&  ~isempty(params.Cmap.flipP)...
         &&  params.Cmap.flipP % Optional colormap flip.
