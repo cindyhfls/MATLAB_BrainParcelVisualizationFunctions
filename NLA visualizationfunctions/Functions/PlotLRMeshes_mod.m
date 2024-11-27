@@ -226,6 +226,7 @@ axis off
 if params.CBar_on
     pos = get(gca, 'pos');
     colormap(CMAP)
+    caxis([0,1]); % Added 2024.11.27 JCT: We have to scale the map to [0,1] otherwise the axis location is incorrect. I haven't thought about edge cases but I think it should be compatible with the other tick scenarios?
     switch params.view
         case {'lat', 'med'}
             h2 = colorbar(gca, 'Color', LineColor, 'Location', 'southoutside');
