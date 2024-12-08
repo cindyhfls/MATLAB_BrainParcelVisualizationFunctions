@@ -1,6 +1,9 @@
 % Example 4: get parcel files for visualization
 % assumes that the cifti files is cortex only with 59412 vertices (fsLR32k)
-addpath(genpath(pwd));
+p = mfilename('fullpath');
+toolboxpath = fileparts(p);
+addpath(genpath(toolboxpath));
+
 addpath(genpath('/data/wheelock/data1/software/cifti-matlab-master')); % downloaded from https://www.mathworks.com/matlabcentral/fileexchange/56783-washington-university-cifti-matlab
 
 parcelname = 'example'% Change me %
@@ -42,11 +45,13 @@ params.TC=1;
 params.ctx='inf';           % 'std','inf','vinf'
 figure;
 ax = subplot(2,1,1);
+set(ax,'Position',[0 0.5,1,0.5]);
 params.fig_handle = ax;
 params.view= 'lat';       % 'dorsal','post','lat','med'
 PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
 title(parcelname,'interpreter','none','color','k')
 ax = subplot(2,1,2);
+set(ax,'Position',[0,0,1,0.5]);
 params.fig_handle = ax;
 params.view ='med';
 PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);

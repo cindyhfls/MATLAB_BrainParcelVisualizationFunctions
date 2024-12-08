@@ -1,5 +1,7 @@
 % Example 2: plot metric for each parcel with specified colormap
-addpath(genpath(pwd));
+p = mfilename('fullpath');
+toolboxpath = fileparts(p);
+addpath(genpath(toolboxpath));
 
 load(['Parcels_','Gordon','.mat'],'Parcels');
 load('IM_Gordon_13nets_333Parcels.mat');
@@ -17,21 +19,17 @@ vals = SI(sortid);
 cmap = interp1(linspace(0,100,10),redbluecmap(10),linspace(0,100,100));
 
 colorrange = [-1,1];
-f=figure; % Replace this with subplot if MATLAB version < 2020b
-tiledlayout(2,1,'TileSpacing','tight')
-ax = nexttile;
+f = figure;
+ax1 = subplot(2,1,1);
+set(ax1,'Position',[0 0.5,0.9,0.5]);
 plot_parcels_by_values(vals,Anat,'med',Parcels,colorrange,cmap) 
-ax = nexttile;
+ax2 = subplot(2,1,2);
+set(ax2,'Position',[0,0.05,0.9,0.5]);
 plot_parcels_by_values(vals,Anat,'lat',Parcels,colorrange,cmap) 
 
-% f = figure;
-% subplot(2,1,1);
-% plot_parcels_by_values(vals,Anat,'med',Parcels,colorrange,cmap) 
-% subplot(2,1,2);
-% plot_parcels_by_values(vals,Anat,'lat',Parcels,colorrange,cmap) 
-
 h = axes(f,'visible','off'); % attach colorbar to h
-c = colorbar(h,'Position',[0.92 0.1680 0.022 0.7],'XTick',[0,1],'XTicklabel',colorrange);
+c = colorbar(h,'Position',[0.92 0.1680 0.022 0.7],'XTick',[0,1],'XTicklabel',colorrange,'FontSize',15);
 colormap(c,cmap);
+exportgraphics(gcf,'Example2.png')
 
 % print('Example2.png','-dpng')

@@ -1,7 +1,8 @@
 % Example 7: plot the nodes with edges connecting them on a glass brain
 % model
-path_to_code = '/data/wheelock/data1/people/Cindy/NLA_toolbox_070319'; % replace with your downloaded directory
-addpath(genpath(path_to_code));
+p = mfilename('fullpath');
+toolboxpath = fileparts(p);
+addpath(genpath(toolboxpath));
 %% Load brain surface
 load('MNI_coord_meshes_32k.mat');
 Anat.CtxL = MNIl;Anat.CtxR = MNIr;

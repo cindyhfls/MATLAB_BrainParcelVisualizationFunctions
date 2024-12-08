@@ -1,6 +1,9 @@
 %% Load mesh
 clear;clc;
-% addpath(genpath(pwd))
+p = mfilename('fullpath');
+toolboxpath = fileparts(p);
+addpath(genpath(toolboxpath));
+
 load('MNI_coord_meshes_32k.mat')
 Anat.CtxL = MNIl;Anat.CtxR = MNIr;
 clear MNIl MNIr
@@ -23,16 +26,20 @@ params.PD=0;
 params.ctx='inf';           % 'std','inf','vinf'
 
 figure;
-tiledlayout(2,1,'TileSpacing','tight')
-ax = nexttile;
-params.fig_handle = ax;
+ax1 = subplot(2,1,1);
+ax2 = subplot(2,1,2);
+set(ax1,'Position',[0 0.5,1,0.5]);
+set(ax2,'Position',[0,0,1,0.5]);
+params.fig_handle = ax1;
 params.view='lat';       % 'dorsal','post','lat','med'
 params.CBar_on =false; % colorbar, the original code had some problem with position
 PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
-ax = nexttile;
-params.fig_handle = ax;
-params.CBar_on =true; % colorbar, the original code had some problem with position
+params.fig_handle = ax2;
+params.CBar_on =false; % colorbar, the original code had some problem with position
 params.view='med';       % 'dorsal','post','lat','med'
 PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
+
+set(gca,'FontSize',15)
+%     pause;
 % set(gcf,'color','w');
 print('Example5.png','-dpng');

@@ -1,6 +1,8 @@
 % Example 3: plot network colors for parcels
 clear;
-addpath(genpath(pwd));
+p = mfilename('fullpath');
+toolboxpath = fileparts(p);
+addpath(genpath(toolboxpath));
 
 % load parcel file CtxL and CtxR with Left Hemisphere and Right Hemisphere
 % ROI assignments
@@ -30,15 +32,28 @@ params.Cmap.P=IM.cMap;
 params.TC=1;
 params.ctx='inf';         % also, 'std','inf','vinf'
 
-figure; % Replace this with subplot if MATLAB version < 2020b
-tiledlayout(2,1,'TileSpacing','tight')
-ax = nexttile;
-params.fig_handle = ax;
-params.view='lat';        % also, 'post','lat','med'
+% figure; % Replace this with subplot if MATLAB version < 2020b
+% tiledlayout(2,1,'TileSpacing','tight')
+% ax = nexttile;
+% params.fig_handle = ax;
+% params.view='lat';        % also, 'post','lat','med'
+% PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
+% ax = nexttile;
+% params.fig_handle = ax;
+% params.view='med';        % also, 'post','lat','med'
+% PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
+figure;
+ax1 = subplot(2,1,1);
+ax2 = subplot(2,1,2);
+set(ax1,'Position',[0 0.5,1,0.5]);
+set(ax2,'Position',[0,0,1,0.5]);
+params.fig_handle = ax1;
+params.view='lat';       % 'dorsal','post','lat','med'
+params.CBar_on =false; % colorbar, the original code had some problem with position
 PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
-ax = nexttile;
-params.fig_handle = ax;
-params.view='med';        % also, 'post','lat','med'
+params.fig_handle = ax2;
+params.CBar_on =false; % colorbar, the original code had some problem with position
+params.view='med';       % 'dorsal','post','lat','med'
 PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
 
 print('Example3.png','-dpng');

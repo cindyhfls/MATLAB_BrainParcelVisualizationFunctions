@@ -1,5 +1,7 @@
 % Example 1: plot Fc matrix with silhouette index
-addpath(genpath(pwd));
+p = mfilename('fullpath');
+toolboxpath = fileparts(p);
+addpath(genpath(toolboxpath));
 
 % load data
 load('/data/wheelock/data1/datasets/WashU120/Parcels_LR_avgcorr_120.mat','corrmat'); % 333x333 average FC data

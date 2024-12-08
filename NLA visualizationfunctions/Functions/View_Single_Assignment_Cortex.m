@@ -32,21 +32,34 @@ Anat.CtxL.data=Parcels.CtxL;
 Anat.CtxR.data=Parcels.CtxR;
 % (2) Set parameters to view as desired
 params.Cmap.P=cMap;
-% params.Cmap.P(Nparcels+1,:) = [0 0 0];
+params.Cmap.P(Nparcels+1,:) = [0 0 0];
 params.TC=1;
 params.ctx='inf';           % 'std','inf','vinf'
+% figure;
+% t = tiledlayout(2, 1, "TileSpacing", "tight");
+% ax = nexttile;
+% % ax = subplot(2,1,1);
+% params.fig_handle = ax;
+% params.view= 'lat';       % 'dorsal','post','lat','med'
+% PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
+% title(parcelname,'interpreter','none','color','k')
+% ax = nexttile;
+% % ax = subplot(2,1,2);
+% params.fig_handle = ax;
+% params.view ='med';
+% PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
 figure;
-t = tiledlayout(2, 1, "TileSpacing", "tight");
-ax = nexttile;
-% ax = subplot(2,1,1);
-params.fig_handle = ax;
-params.view= 'lat';       % 'dorsal','post','lat','med'
+ax1 = subplot(2,1,1);
+ax2 = subplot(2,1,2);
+set(ax1,'Position',[0 0.5,1,0.5]);
+set(ax2,'Position',[0,0,1,0.5]);
+params.fig_handle = ax1;
+params.view='lat';       % 'dorsal','post','lat','med'
+params.CBar_on =false; % colorbar, the original code had some problem with position
 PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
-title(parcelname,'interpreter','none','color','k')
-ax = nexttile;
-% ax = subplot(2,1,2);
-params.fig_handle = ax;
-params.view ='med';
+params.fig_handle = ax2;
+params.CBar_on =false; % colorbar, the original code had some problem with position
+params.view='med';       % 'dorsal','post','lat','med'
 PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
 
 set(gcf,'color','w','InvertHardCopy','off');
