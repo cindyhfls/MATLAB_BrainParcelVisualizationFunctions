@@ -1,13 +1,9 @@
-function View_Single_Assignment_Cortex(parceldata,cMap,parcelname)
+function View_Single_Assignment_Cortex(parceldata,cMap)
 Nparcels = length(setdiff(unique(parceldata),0))
 
 if ~exist('cMap','var')
     cMap = jet(Nparcels);
 end
-if ~exist('parcelname','var')
-    parcelname = '';
-end
-
 
 Linds=with_without_mw_conversion('Lindfull');
 Rinds=with_without_mw_conversion('Rindfull');
@@ -35,19 +31,7 @@ params.Cmap.P=cMap;
 params.Cmap.P(Nparcels+1,:) = [0 0 0];
 params.TC=1;
 params.ctx='inf';           % 'std','inf','vinf'
-% figure;
-% t = tiledlayout(2, 1, "TileSpacing", "tight");
-% ax = nexttile;
-% % ax = subplot(2,1,1);
-% params.fig_handle = ax;
-% params.view= 'lat';       % 'dorsal','post','lat','med'
-% PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
-% title(parcelname,'interpreter','none','color','k')
-% ax = nexttile;
-% % ax = subplot(2,1,2);
-% params.fig_handle = ax;
-% params.view ='med';
-% PlotLRMeshes_mod(Anat.CtxL,Anat.CtxR, params);
+
 figure;
 ax1 = subplot(2,1,1);
 ax2 = subplot(2,1,2);

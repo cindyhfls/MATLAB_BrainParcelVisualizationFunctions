@@ -19,16 +19,16 @@ vals = SI(sortid);
 cmap = interp1(linspace(0,100,10),redbluecmap(10),linspace(0,100,100));
 
 colorrange = [-1,1];
-f = figure;
+f = figure('position',[100 100 385 275]);
 ax1 = subplot(2,1,1);
-set(ax1,'Position',[0 0.5,0.9,0.5]);
+set(ax1,'Position',[0,0.5,0.85,0.5]);
 plot_parcels_by_values(vals,Anat,'med',Parcels,colorrange,cmap) 
 ax2 = subplot(2,1,2);
-set(ax2,'Position',[0,0.05,0.9,0.5]);
+set(ax2,'Position',[0,0.05,0.85,0.5]);
 plot_parcels_by_values(vals,Anat,'lat',Parcels,colorrange,cmap) 
 
 h = axes(f,'visible','off'); % attach colorbar to h
-c = colorbar(h,'Position',[0.92 0.1680 0.022 0.7],'XTick',[0,1],'XTicklabel',colorrange,'FontSize',15);
+c = colorbar(h,'Position',[0.88 0.1680 0.022 0.7],'XTick',[0,1],'XTicklabel',colorrange,'FontSize',12);
 colormap(c,cmap);
 exportgraphics(gcf,'Example2.png')
 
