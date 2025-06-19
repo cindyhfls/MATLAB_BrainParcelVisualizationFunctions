@@ -1,4 +1,7 @@
-function View_Single_Assignment_Cortex(parceldata,cMap)
+function f = View_Single_Assignment_Cortex(parceldata,cMap,f,params)
+if nargin <3 || isempty(f)
+    f = figure;
+end
 Nparcels = length(setdiff(unique(parceldata),0))
 
 if ~exist('cMap','var')
@@ -28,11 +31,10 @@ Anat.CtxL.data=Parcels.CtxL;
 Anat.CtxR.data=Parcels.CtxR;
 % (2) Set parameters to view as desired
 params.Cmap.P=cMap;
-params.Cmap.P(Nparcels+1,:) = [0 0 0];
+% params.Cmap.P(Nparcels+1,:) = [0 0 0];
 params.TC=1;
 params.ctx='inf';           % 'std','inf','vinf'
 
-figure;
 ax1 = subplot(2,1,1);
 ax2 = subplot(2,1,2);
 set(ax1,'Position',[0 0.5,1,0.5]);
