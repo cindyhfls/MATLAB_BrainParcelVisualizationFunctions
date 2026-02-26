@@ -4,7 +4,7 @@
 I forked some visualization functions from [Network Level Analysis (NLA) Toolbox (Beta version)](https://github.com/mwheelock/Network-Level-Analysis) and adapted them to my use with examples. NLA is an extensible MATLAB-based software package for the analysis of behavioral associations with brain connectivity data. NLA utilizes a statistical approach, variously known as 'pathway analysis,' 'over-representation analysis,' or 'enrichment analysis,' which was first used to describe behavioral or clinical associations in genome-wide association studies.
 
 # Limitation
-All visualizations are done in the fsLR 32k surface (Van Essen et al. 2012 Cerebral Cortex). For transitions across spaces, please try the [neuromaps toolbox](https://github.com/netneurolab/neuromaps).
+All visualizations are done in the Conte69 (I believe?) surface (Van Essen et al. 2012 Cerebral Cortex) in fsLR 32k space. For transitions across spaces, please try the [neuromaps toolbox](https://github.com/netneurolab/neuromaps).
 
 # Example applications
 [**Example 1**](https://github.com/cindyhfls/MATLAB_BrainParcelVisualizationFunctions/blob/main/NLA%20visualizationfunctions/Example1_plot_FC_with_silhouette.m)
